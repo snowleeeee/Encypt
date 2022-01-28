@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.micol.sypertest.emp.service.EmpMapper">
+	<select id="findEmp" resultType="co.micol.sypertest.emp.service.Emp">
+		SELECT * FROM EMPLOYEES
+	</select>
+	
+	<select id="findDept" resultType="co.micol.sypertest.emp.service.Dept">
+		SELECT * FROM DEPARTMENTS
+	</select> 
+	
+	<update id="updateDept">
+		UPDATE DEPARTMENTS 
+		SET DEPARTMENT_NAME = #{department_name}
+		WHERE DEPARTMENT_ID = #{department_id}
+	</update>
+	
+	
+	<delete id="deleteDept">
+		DELETE DEPARTMENTS
+		WHERE DEPARTMENT_ID = #{department_id}
+	</delete>
+	
+	<insert id="insertDept">
+		INSERT DEPARTMENTS(DEPARTMENT_ID, DEPARTMENT_NAME)
+		VALUES(#{department_id}, #{department_name})
+	</insert>
+	
+</mapper>
