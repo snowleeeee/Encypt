@@ -15,7 +15,7 @@ public class Emp {
 	String last_name;
 	@JsonIgnore
 	String email;
-	@JsonFormat(pattern = "yyyy-mm-dd")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	Date hire_date; 
 	
 	String job_id;                                 

@@ -1,6 +1,7 @@
 package co.micol.sypertest.util;
 
-import java.security.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class ShaEncypt {
 

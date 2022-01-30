@@ -20,12 +20,12 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		
-		return "home";
+		return "movieList";
 	}
 	
 	@RequestMapping("/home.do")
 	public String home() {
-		return "home";
+		return "movieList";
 	}
 	
 }

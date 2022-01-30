@@ -9,20 +9,30 @@
 		SELECT * FROM DEPARTMENTS
 	</select> 
 	
-	<update id="updateDept">
+	<select id="findDeptById" 
+	resultType="co.micol.sypertest.emp.service.Dept"
+	parameterType="string">
+		select *
+		  from departments
+		 where department_id = #{deparment_id}
+	</select>
+	
+	<update id="updateDept" 
+	parameterType="co.micol.sypertest.emp.service.Dept">
 		UPDATE DEPARTMENTS 
 		SET DEPARTMENT_NAME = #{department_name}
 		WHERE DEPARTMENT_ID = #{department_id}
 	</update>
 	
 	
-	<delete id="deleteDept">
+	<delete id="deleteDept" parameterType="String">
 		DELETE DEPARTMENTS
-		WHERE DEPARTMENT_ID = #{department_id}
+		WHERE DEPARTMENT_ID = #{value}
 	</delete>
 	
-	<insert id="insertDept">
-		INSERT DEPARTMENTS(DEPARTMENT_ID, DEPARTMENT_NAME)
+	<insert id="insertDept" 
+	parameterType="co.micol.sypertest.emp.service.Dept">
+		INSERT INTO DEPARTMENTS(DEPARTMENT_ID, DEPARTMENT_NAME)
 		VALUES(#{department_id}, #{department_name})
 	</insert>
 	
