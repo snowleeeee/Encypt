@@ -11,7 +11,7 @@
 	<input name="kor"> <input name="eng">
 	<button id="btnAdd" type="button">추가</button>
 	<button id="btnScore" type="button">국어성적합계</button>
-	<table>
+	<table >
 		<thead>
 			<tr>
 				<th>국어</th>
@@ -58,9 +58,16 @@
 			var kor = $("[name='kor']");
 			var eng = $("[name='eng']");
 			
-			var tmp = $('[name="fintechUseNum"]');
-			console.log(kor.html());
-			console.log(eng.html());
+			
+			var tbody = $("tbody");
+			
+			
+			$("<tr>").append( $("<td>").html($(kor).val()),
+							$("<td>").html($(eng).val()) )
+					 .appendTo(tbody);
+			
+			console.log($(kor).val());
+			console.log($(eng).val());
 		})
 	</script>
 </body>
